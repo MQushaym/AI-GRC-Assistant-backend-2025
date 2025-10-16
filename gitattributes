@@ -1,0 +1,2 @@
+vector_db/18c4a096-cc42-4b3a-91ea-d52a9028c913/data_level0.bin filter=lfs diff=lfs merge=lfs -text
+vector_db/chroma.sqlite3 filter=lfs diff=lfs merge=lfs -text
