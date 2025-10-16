@@ -1,12 +1,16 @@
 -----
 
-# 🤖 AI-GRC-Assistant-Backend-2025 (Core RAG Service)
+# 🤖 AI-GRC-Assistant-Backend-2025
 
 ## 🌟 Project Overview
 
-The **AI-GRC-Assistant-Backend** is a high-performance, containerized service designed to provide authoritative and context-aware compliance answers based on official regulatory documents. This core service utilizes a **Retrieval-Augmented Generation (RAG)** architecture with **FastAPI** to serve secure, scalable, and factually grounded GRC advisories.
+The **AI-GRC-Assistant-Backend** is a critical solution developed to address the complexity of Cybersecurity Governance, Risk, and Compliance (GRC) in the context of Saudi Arabia's **Vision 2030** digital transformation efforts.
 
-This project functions as the primary computational and knowledge layer, demonstrating a **Microservices Architecture** by operating independently of the frontend.
+**Problem:** Organizations struggle with interpreting and manually assessing compliance against detailed, technical regulations like the NCA's Essential Cybersecurity Controls (ECC). Manual reviews are slow and inconsistent.
+
+**Solution:** This service implements a highly reliable **Retrieval-Augmented Generation (RAG)** architecture using **FastAPI**. It leverages Large Language Models (LLMs) and a specialized Vector Database (ChromaDB) to ground all advisory responses directly in the official NCA ECC documentation.
+
+This microservice ensures real-time, accurate, and scalable GRC advisory, enabling fast, informed compliance self-assessments.
 
 -----
 
@@ -45,6 +49,8 @@ The authoritative dataset is hosted separately to enable robust asset management
 ## 🎯 Model Evaluation Metrics
 
 The performance metrics below validate the system's effectiveness in generating reliable, compliant, and contextually precise answers:
+
+**Note:** Performance metrics were derived from an evaluation run against a **custom RAG Reference Dataset** based on the NCA ECC Guide. All evaluation artifacts (notebook and dataset) are located in the **`/evaluation`** directory.
 
 | Metric | Score | Interpretation |
 | :--- | :--- | :--- |
@@ -87,6 +93,12 @@ curl -X POST http://localhost:7860/ask \
 -H "Content-Type: application/json" \
 -d '{"question": "What are the requirements for physical security according to the guide?"}'
 
+### 4\. Replicate Evaluation
+The performance metrics can be replicated and verified using the artifacts provided:
+
+Evaluation Data: /evaluation/rag_evaluate_question_with_reference.json
+
+Jupyter Notebook: /evaluation/evaluate.ipynb (Includes all steps to run the Ragas-based evaluation)
 
 -----
 
