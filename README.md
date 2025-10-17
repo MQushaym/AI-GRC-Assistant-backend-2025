@@ -64,34 +64,35 @@ The performance metrics below validate the system's effectiveness in generating 
 
 ## 🛠️ Quick Start (Local Setup)
 
-### 1\. Prerequisites
+### 1. Prerequisites
 
-  * **Docker** and **Docker Compose** installed.
-  * An API Key for **Together AI** (set as `TOGETHER_API_KEY` environment variable).
-  * The Vector Database must be downloaded from the Hugging Face repository and placed in the project directory named `vector_db`.
+* **Docker** and **Docker Compose** installed.
+* An API Key for **Together AI** (set as `TOGETHER_API_KEY` environment variable).
+* The Vector Database must be downloaded from the Hugging Face repository and placed in the project directory named `vector_db`.
 
-### 2\. Build and Run the Container
+### 2. Build and Run the Container
 
 Build the Docker image:
 
-bash
+```bash
 docker build -t ai-grc-backend .
+```
 
+Run the container, exposing the API on port 7860:
 
-Run the container, exposing the API on port `7860`:
-
-bash
+```bash
 docker run -d -p 7860:7860 --env TOGETHER_API_KEY=<Your_Key> ai-grc-backend
+```
 
+3. Test the API Endpoint
+Access the live /ask endpoint to test the RAG functionality:
 
-### 3\. Test the API Endpoint
+```bash
 
-Access the live `/ask` endpoint to test the RAG functionality:
-
-bash
 curl -X POST http://localhost:7860/ask \
 -H "Content-Type: application/json" \
 -d '{"question": "What are the requirements for physical security according to the guide?"}'
+```
 
 ### 4\. Replicate Evaluation
 The performance metrics can be replicated and verified using the artifacts provided:
